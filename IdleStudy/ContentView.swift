@@ -103,7 +103,7 @@ struct CountUpTimerView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        Text("经历时间：\(timeString)")
+        Text("hi：\(timeString)")
             .onReceive(timer) { _ in
                 secondElapse += 1
             }

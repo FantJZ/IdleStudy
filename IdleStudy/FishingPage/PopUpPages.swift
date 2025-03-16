@@ -16,10 +16,10 @@ struct TimeSelectorPopup: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("选择时间：\(Int(selectedTime)) 小时")
+            Text("选择时间：\(String(format:"%.1f", Double(selectedTime))) 小时")
                 .font(.headline)
             
-            Slider(value: $selectedTime, in: 0...12, step: 1)
+            Slider(value: $selectedTime, in: 0...12, step: 0.5)
                 .padding(.horizontal)
             
             Button("确定") {

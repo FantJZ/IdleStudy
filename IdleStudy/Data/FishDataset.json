@@ -1,0 +1,10 @@
+[
+    {
+        "name" : "Red Fish"
+        "image" : "square.and.arrow.up"
+        "rarity" : "Common"
+        "maximum weight" : 2.5
+        "minimum weight" : 0.5
+        "price" : 10
+    }
+]

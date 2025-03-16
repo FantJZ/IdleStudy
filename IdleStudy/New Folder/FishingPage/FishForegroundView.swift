@@ -7,12 +7,16 @@
 
 import SwiftUI
 
-struct FishForegroundView: View {
+struct ForegroundView: View {
+    @State var startTiming: Bool = false          // 是否开始计时
+    @State var selectedTime: Double = 0           // 用户选择的时间（小时）
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            // 顶部栏
+            topBarView(startTiming: $startTiming, selectedTime: $selectedTime)
+            Spacer()
+            StartandEndButtons(startTiming: $startTiming, selectedTime: $selectedTime)
+        }
     }
-}
-
-#Preview {
-    FishForegroundView()
 }

@@ -9,7 +9,13 @@ import SwiftUI
 
 struct FishView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            // 背景
+            FishBackgroundView()
+            
+            // 前景
+            ForegroundView()
+        }
     }
 }
 

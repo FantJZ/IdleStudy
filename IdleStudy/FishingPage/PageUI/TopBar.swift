@@ -11,6 +11,7 @@ import SwiftUI
 struct topBarView: View {
     @Binding var startTiming: Bool
     @Binding var selectedTime: Double
+    @Binding var showListFishes: Bool
     
     var body: some View {
         VStack {
@@ -24,6 +25,14 @@ struct topBarView: View {
                 }
                 .padding(.leading)
                 Spacer()
+                
+                Button(action: {
+                    showListFishes = true
+                }) {
+                    Image(systemName: "book.pages")
+                        .foregroundColor(.white)
+                }
+                .padding(.trailing)
             }
             
             // 当开始计时后，显示正向 & 倒计时

@@ -1,10 +1,51 @@
 [
     {
-        "name" : "Red Fish"
-        "image" : "square.and.arrow.up"
-        "rarity" : "Common"
-        "maximum weight" : 2.5
-        "minimum weight" : 0.5
+        "name" : "红鱼",
+        "image" : "square.and.arrow.up",
+        "rarity" : "普通",
+        "pond" : "RGB池塘",
+        "maximum weight" : 2.5,
+        "minimum weight" : 0.5,
         "price" : 10
-    }
+    },
+    
+    {
+        "name" : "粉鱼",
+        "image" : "square.and.arrow.down",
+        "rarity" : "普通",
+        "pond" : "RGB池塘",
+        "maximum weight" : 2.5,
+        "minimum weight" : 0.5,
+        "price" : 10
+    },
+    
+    {
+        "name" : "红鱼",
+        "image" : "square.and.arrow.up",
+        "rarity" : "普通",
+        "pond" : "RGB池塘",
+        "maximum weight" : 2.5,
+        "minimum weight" : 0.5,
+        "price" : 10
+    },
+    
+    {
+        "name" : "红鱼",
+        "image" : "square.and.arrow.up",
+        "rarity" : "普通",
+        "pond" : "RGB池塘",
+        "maximum weight" : 2.5,
+        "minimum weight" : 0.5,
+        "price" : 10
+    },
+    
+    {
+        "name" : "红鱼",
+        "image" : "square.and.arrow.up",
+        "rarity" : "普通",
+        "pond" : "RGB池塘",
+        "maximum weight" : 2.5,
+        "minimum weight" : 0.5,
+        "price" : 10
+    },
 ]

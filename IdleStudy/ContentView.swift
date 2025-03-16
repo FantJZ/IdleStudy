@@ -103,11 +103,12 @@ struct CountUpTimerView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        Text("hi：\(timeString)")
+        Text("经历时间：\(timeString)")
             .onReceive(timer) { _ in
                 secondElapse += 1
             }
     }
+    //新的comment
     
     var timeString: String {
         let hours = secondElapse / 3600

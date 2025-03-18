@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StartandEndButtons: View {
     
+    @Binding var showSlideBar: Bool
     @Binding var startTiming: Bool
     @Binding var selectedTime: Double
     @State var isStartPressed: Bool = false       // 控制弹出弹窗
@@ -19,7 +20,8 @@ struct StartandEndButtons: View {
             // ---- Start 按钮 ----
             Button(action: {
                 // 点下后弹出弹窗，让用户选择时间
-                isStartPressed.toggle()
+                startTiming = true
+                showSlideBar = false
             }) {
                 Text("Start")
                     .foregroundColor(.white)
@@ -28,18 +30,19 @@ struct StartandEndButtons: View {
                     .cornerRadius(20)
                     .font(.largeTitle)
             }
-            // 用 sheet 弹出时间选择器
-            .sheet(isPresented: $isStartPressed) {
-                TimeSelectorPopup(
-                    selectedTime: $selectedTime,
-                    startTiming: $startTiming
-                )
-            }
+//            // 用 sheet 弹出时间选择器
+//            .sheet(isPresented: $isStartPressed) {
+//                TimeSelectorPopup(
+//                    selectedTime: $selectedTime,
+//                    startTiming: $startTiming
+//                )
+//            }
         } else {
             // ---- End 按钮 ----
             Button(action: {
                 // 停止计时逻辑
                 startTiming = false
+                showSlideBar = true
             }) {
                 Text("End")
                     .foregroundColor(.white)

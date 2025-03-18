@@ -1,10 +1,3 @@
-//
-//  Timers.swift
-//  IdleStudy
-//
-//  Created by JZ on 2025/3/16.
-//
-
 import SwiftUI
 import Combine
 
@@ -19,7 +12,6 @@ struct CountUpTimerView: View {
                 secondElapse += 1
             }
     }
-    //新的comment
     
     var timeString: String {
         let hours = secondElapse / 3600
@@ -29,8 +21,9 @@ struct CountUpTimerView: View {
     }
 }
 
-// MARK: - 倒计时
+// MARK: - 倒计时（selectedTime 以“分钟”为单位）
 struct CountdownTimerView: View {
+    /// 现在的单位是“分钟”，因此只需乘 60 得到总秒数
     @Binding var selectedTime: Double
     
     @State private var remainingSeconds: Int = 0
@@ -40,7 +33,9 @@ struct CountdownTimerView: View {
     var body: some View {
         Text("剩余时间：\(timeString)")
             .onAppear {
-                remainingSeconds = Int(selectedTime * 3600)
+                // 将选定的分钟数转为秒
+                remainingSeconds = Int(selectedTime * 60)
+                // 启动计时器
                 timerCancellable = timerPublisher.connect()
             }
             .onDisappear {
@@ -62,3 +57,4 @@ struct CountdownTimerView: View {
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
 }
+

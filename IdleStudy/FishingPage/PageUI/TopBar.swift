@@ -37,8 +37,13 @@ struct topBarView: View {
             
             // 当开始计时后，显示正向 & 倒计时
             if startTiming {
-                CountUpTimerView()
-                CountdownTimerView(selectedTime: $selectedTime)
+                VStack{
+                    CountUpTimerView()
+                    CountdownTimerView(selectedTime: $selectedTime)
+                }
+                .padding(.all, 10)
+                .background(Color.blue)
+                .cornerRadius(10)
             }
         }
     }

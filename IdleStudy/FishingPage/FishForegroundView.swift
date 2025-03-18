@@ -11,6 +11,7 @@ struct ForegroundView: View {
     @State var startTiming: Bool = false          // 是否开始计时
     @State var selectedTime: Double = 0           // 用户选择的时间（小时）
     @State var showListFishes: Bool = false
+    @State var showSlideBar: Bool = true
     
     var body: some View {
         ZStack{
@@ -22,8 +23,12 @@ struct ForegroundView: View {
                 
                 Spacer()
                 
+                if (showSlideBar == true){
+                    SlideBar(selectedTime: $selectedTime)
+                }
                 //底部按钮
-                StartandEndButtons(startTiming: $startTiming,
+                StartandEndButtons(showSlideBar: $showSlideBar,
+                                   startTiming: $startTiming,
                                    selectedTime: $selectedTime)
             }
             
@@ -33,4 +38,8 @@ struct ForegroundView: View {
             }
         }
     }
+}
+
+#Preview {
+    ForegroundView()
 }

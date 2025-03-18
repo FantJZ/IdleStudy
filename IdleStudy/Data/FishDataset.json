@@ -4,8 +4,8 @@
         "image" : "square.and.arrow.up",
         "rarity" : "普通",
         "pond" : "RGB池塘",
-        "maximum weight" : 2.5,
-        "minimum weight" : 0.5,
+        "maximum weight" : 2.50,
+        "minimum weight" : 0.50,
         "price" : 10
     },
     
@@ -14,8 +14,8 @@
         "image" : "square.and.arrow.down",
         "rarity" : "普通",
         "pond" : "RGB池塘",
-        "maximum weight" : 2.5,
-        "minimum weight" : 0.5,
+        "maximum weight" : 2.50,
+        "minimum weight" : 0.50,
         "price" : 10
     },
     
@@ -24,8 +24,8 @@
         "image" : "square.and.arrow.up",
         "rarity" : "普通",
         "pond" : "RGB池塘",
-        "maximum weight" : 2.5,
-        "minimum weight" : 0.5,
+        "maximum weight" : 2.50,
+        "minimum weight" : 0.50,
         "price" : 10
     },
     
@@ -34,8 +34,8 @@
         "image" : "square.and.arrow.up",
         "rarity" : "普通",
         "pond" : "RGB池塘",
-        "maximum weight" : 2.5,
-        "minimum weight" : 0.5,
+        "maximum weight" : 2.50,
+        "minimum weight" : 0.50,
         "price" : 10
     },
     
@@ -44,8 +44,8 @@
         "image" : "square.and.arrow.up",
         "rarity" : "普通",
         "pond" : "RGB池塘",
-        "maximum weight" : 2.5,
-        "minimum weight" : 0.5,
+        "maximum weight" : 2.50,
+        "minimum weight" : 0.50,
         "price" : 10
     },
 ]

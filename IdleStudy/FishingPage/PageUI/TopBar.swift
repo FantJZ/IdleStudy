@@ -12,6 +12,7 @@ struct topBarView: View {
     @Binding var startTiming: Bool
     @Binding var selectedTime: Double
     @Binding var showListFishes: Bool
+    @Binding var isOneMinute: Bool
     
     var body: some View {
         VStack {
@@ -38,8 +39,8 @@ struct topBarView: View {
             // 当开始计时后，显示正向 & 倒计时
             if startTiming {
                 VStack{
-                    CountUpTimerView()
-                    CountdownTimerView(selectedTime: $selectedTime)
+//                    CountUpTimerView()
+                    CountdownTimerView(selectedTime: $selectedTime, isOneMinute: $isOneMinute)
                 }
                 .padding(.all, 10)
                 .background(Color.blue)

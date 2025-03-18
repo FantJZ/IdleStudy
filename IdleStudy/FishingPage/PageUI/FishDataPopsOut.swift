@@ -9,7 +9,16 @@ import SwiftUI
 
 struct FishDataPopsOut: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Rectangle()
+            .fill(Color.gray.opacity(0.5))
+            .overlay(
+                FishCalculations()
+            )
+            .frame(width:200, height: 300)
+            .position(
+                x: UIScreen.main.bounds.midX,
+                y: UIScreen.main.bounds.midY
+            )
     }
 }
 

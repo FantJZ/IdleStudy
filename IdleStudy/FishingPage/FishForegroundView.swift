@@ -12,6 +12,9 @@ struct ForegroundView: View {
     @State var selectedTime: Double = 0           // 用户选择的时间（小时）
     @State var showListFishes: Bool = false
     @State var showSlideBar: Bool = true
+    @State var isFishing: Bool = false
+    @State var isFishDataPopsOut: Bool = false
+    @State var isOneMinute: Bool = false
     
     var body: some View {
         ZStack{
@@ -19,7 +22,17 @@ struct ForegroundView: View {
                 // 顶部栏
                 topBarView(startTiming: $startTiming,
                            selectedTime: $selectedTime,
-                           showListFishes: $showListFishes)
+                           showListFishes: $showListFishes, isOneMinute: $isOneMinute)
+                
+                Spacer()
+                if isOneMinute == true{
+                        FishDataPopsOut()
+                            .onAppear{
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                    isOneMinute = false
+                                }
+                    }
+                }
                 
                 Spacer()
                 

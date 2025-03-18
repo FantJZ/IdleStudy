@@ -4,8 +4,8 @@
         "image" : "square.and.arrow.up",
         "rarity" : "普通",
         "pond" : "小池塘",
-        "maximum weight" : 0.20,
-        "minimum weight" : 1.50,
+        "maximum weight" : 1.50,
+        "minimum weight" : 0.20,
         "price" : 10
     },
     
@@ -14,8 +14,8 @@
         "image" : "square.and.arrow.down",
         "rarity" : "普通",
         "pond" : "小池塘",
-        "maximum weight" : 0.50,
-        "minimum weight" : 2.00,
+        "maximum weight" : 2.00,
+        "minimum weight" : 0.50,
         "price" : 15
     },
     
@@ -24,8 +24,8 @@
         "image" : "square.and.arrow.down",
         "rarity" : "普通",
         "pond" : "小池塘",
-        "maximum weight" : 0.05,
-        "minimum weight" : 1.50,
+        "maximum weight" : 1.50,
+        "minimum weight" : 0.05,
         "price" : 10
     },
     
@@ -34,8 +34,8 @@
         "image" : "square.and.arrow.down",
         "rarity" : "稀有",
         "pond" : "小池塘",
-        "maximum weight" : 1.00,
-        "minimum weight" : 0.30,
+        "maximum weight" : 0.10,
+        "minimum weight" : 1.00,
         "price" : 30
     },
     
@@ -44,8 +44,8 @@
         "image" : "square.and.arrow.down",
         "rarity" : "稀有",
         "pond" : "小池塘",
-        "maximum weight" : 0.05,
-        "minimum weight" : 1.50,
+        "maximum weight" : 1.50,
+        "minimum weight" : 0.10,
         "price" : 30
     },
     
@@ -54,8 +54,8 @@
         "image" : "square.and.arrow.down",
         "rarity" : "稀有",
         "pond" : "小池塘",
-        "maximum weight" : 0.05,
-        "minimum weight" : 1.50,
+        "maximum weight" : 1.50,
+        "minimum weight" : 0.10,
         "price" : 30
     },
     
@@ -64,8 +64,8 @@
         "image" : "square.and.arrow.down",
         "rarity" : "史诗",
         "pond" : "小池塘",
-        "maximum weight" : 0.05,
-        "minimum weight" : 1.80,
+        "maximum weight" : 1.85,
+        "minimum weight" : 0.20,
         "price" : 60
     },
     
@@ -74,8 +74,8 @@
         "image" : "square.and.arrow.down",
         "rarity" : "史诗",
         "pond" : "小池塘",
-        "maximum weight" : 0.30,
-        "minimum weight" : 5.00,
+        "maximum weight" : 5.00,
+        "minimum weight" : 0.30,
         "price" : 60
     },
     
@@ -84,8 +84,8 @@
         "image" : "square.and.arrow.down",
         "rarity" : "传说",
         "pond" : "小池塘",
-        "maximum weight" : 0.30,
-        "minimum weight" : 5.00,
+        "maximum weight" : 5.00,
+        "minimum weight" : 0.30,
         "price" : 150
     },
     
@@ -94,8 +94,8 @@
         "image" : "square.and.arrow.down",
         "rarity" : "传说",
         "pond" : "小池塘",
-        "maximum weight" : 0.50,
-        "minimum weight" : 5.00,
+        "maximum weight" : 7.00,
+        "minimum weight" : 0.50,
         "price" : 150
     },
     
@@ -104,8 +104,8 @@
         "image" : "square.and.arrow.down",
         "rarity" : "至珍",
         "pond" : "小池塘",
-        "maximum weight" : 0.01,
-        "minimum weight" : 1.00,
+        "maximum weight" : 1.00,
+        "minimum weight" : 0.01,
         "price" : 1
     },
 ]

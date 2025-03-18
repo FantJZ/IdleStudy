@@ -15,7 +15,7 @@ extension Double {
     }
 }
 
-struct TestView: View {
+struct FishCalculations: View {
     
     @State var isOneMinute: Bool = false
     @State var rarityText: String = ""
@@ -39,15 +39,15 @@ struct TestView: View {
             Text("稀有度：" + getRarity(fishName: fishName))
             //开始钓鱼
         }
-        .onAppear{
-            var timer = getTimer(time: 1){
-                newValue in
-                if newValue % 60 == 0 {
-                    isOneMinute = true
-                    print("one min")
-                }
-            }
-        }
+//        .onAppear{
+//            var timer = getTimer(time: 1){
+//                newValue in
+//                print(newValue)
+//                if newValue % 60 == 0 {
+//                    print("one minute")
+//                }
+//            }
+//        }
     }
 }
 
@@ -208,5 +208,5 @@ func calculatePrice (fishName: String, fishWeight: Double, fishQuality: String) 
 }
 
 #Preview {
-    TestView()
+    FishCalculations()
 }

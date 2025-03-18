@@ -17,17 +17,101 @@ extension Double {
 
 struct TestView: View {
     
+    @State var isOneMinute: Bool = false
+    @State var rarityText: String = ""
+    @State var pondName: String = "小池塘"
+    
     var body: some View{
-        let FishWeightAndQuality = calculateWeight(fishName: "红鱼")
-        Text("品质：\(FishWeightAndQuality.quality)")
-        Text("重量：" + String(format: "%.2f", FishWeightAndQuality.weight) + " kg")
-        Text("价格：\(calculatePrice(fishName: "红鱼", fishWeight: FishWeightAndQuality.weight, fishQuality: FishWeightAndQuality.quality))")
+        VStack(alignment: .leading){
+            //获取鱼的名称
+            let fishName = getFishName(pondName: pondName)
+            Text("名称：" + fishName)
+            
+            //品质重量
+            let FishWeightAndQuality = calculateWeight(fishName: fishName)
+            Text("品质：\(FishWeightAndQuality.quality)")
+            Text("重量：" + String(format: "%.2f", FishWeightAndQuality.weight) + " kg")
+            
+            //价格
+            Text("价格：\(calculatePrice(fishName: fishName, fishWeight: FishWeightAndQuality.weight, fishQuality: FishWeightAndQuality.quality))")
+            
+            //稀有度
+            Text("稀有度：" + getRarity(fishName: fishName))
+            //开始钓鱼
+        }
+        .onAppear{
+            var timer = getTimer(time: 1){
+                newValue in
+                if newValue % 60 == 0 {
+                    isOneMinute = true
+                    print("one min")
+                }
+            }
+        }
     }
 }
 
-//MARK: - 品质计算
+//MARK: - 每分钟获取一次鱼或者宝藏或者没有鱼
+func getFishName(pondName: String) -> String{
+    var fishName: String = ""
+    
+    guard let fishes = loadFishes() else {
+        print("加载鱼数据失败")
+        return ("")
+    }
+    
+    if let pond = fishes.first(where: { $0.pond == pondName}) {
+        _ = pond.pond
+        
+        let result = randomEvent(5, 10, 6, 3, 1, 0.1)
+        if result == 1 {
+            if let rarity = fishes.first(where: {$0.rarity == "普通"}){
+                fishName = rarity.name
+            }
+        }
+        if result == 2 {
+            if let rarity = fishes.first(where: {$0.rarity == "稀有"}){
+                fishName = rarity.name
+            }
+        }
+        if result == 3 {
+            if let rarity = fishes.first(where: {$0.rarity == "史诗"}){
+                fishName = rarity.name
+            }
+        }
+        if result == 4 {
+            if let rarity = fishes.first(where: {$0.rarity == "传说"}){
+                fishName = rarity.name
+            }
+        }
+        if result == 5 {
+            if let rarity = fishes.first(where: {$0.rarity == "至珍"}){
+                fishName = rarity.name
+            }
+        }
+    }
+    
+    return fishName
+}
 
-//MARK: - 重量计算
+//MARK: - 稀有度
+func getRarity(fishName: String) -> String{
+    var rearity: String = ""
+    
+    // 先加载鱼数据
+    guard let fishes = loadFishes() else {
+        print("加载鱼数据失败")
+        return ("")
+    }
+    
+    // 在数组中查找名称匹配的鱼
+    if let fish = fishes.first(where: { $0.name == fishName }) {
+        rearity = fish.rarity
+    }
+    return rearity
+}
+
+//MARK: - 重量和品质计算
 func calculateWeight(fishName: String)  -> (quality:String, weight: Double) {
     var quality: String = ""
     var weight: Double = 0
@@ -102,10 +186,6 @@ func calculatePrice (fishName: String, fishWeight: Double, fishQuality: String) 
         
         let weightFactor = (fishWeight / maximumWeight) * fishBasedPrice
         var qualityFactor: Double = 1
-        
-        print("FW \(fishWeight)")
-        print("MW \(maximumWeight)")
-        print("RATIO \(fishWeight / maximumWeight)")
         
         if fishQuality == "差劣" {
             qualityFactor = 1.0

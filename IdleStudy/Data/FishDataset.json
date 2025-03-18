@@ -34,8 +34,8 @@
         "image" : "square.and.arrow.down",
         "rarity" : "稀有",
         "pond" : "小池塘",
-        "maximum weight" : 0.10,
-        "minimum weight" : 1.00,
+        "maximum weight" : 1.00,
+        "minimum weight" : 0.50,
         "price" : 30
     },
     

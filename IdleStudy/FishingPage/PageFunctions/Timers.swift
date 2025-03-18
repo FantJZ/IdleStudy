@@ -29,10 +29,12 @@ struct CountdownTimerView: View {
     @Binding var isOneMinute: Bool
     
     @State private var remainingSeconds: Int = 0
-    let timerPublisher = Timer.publish(every: 1, on: .main, in: .common)
     @State private var timerCancellable: Cancellable? = nil
     
+    let timerPublisher = Timer.publish(every: 1, on: .main, in: .common)
+    
     var body: some View {
+        
         Text("剩余时间：\(timeString)")
             .onAppear {
                 // 将选定的分钟数转为秒
@@ -46,6 +48,9 @@ struct CountdownTimerView: View {
             .onReceive(timerPublisher) { _ in
                 if remainingSeconds > 0 {
                     remainingSeconds -= 1
+                    
+                    print(remainingSeconds)
+                    
                     // 每当剩余秒数恰好能被 60 整除，就说明又过去了一整分钟
                     if remainingSeconds % 60 == 0 {
                         // 通知父视图：刚过了一分钟

@@ -12,8 +12,6 @@ struct ForegroundView: View {
     @State var selectedTime: Double = 0           // 用户选择的时间（小时）
     @State var showListFishes: Bool = false
     @State var showSlideBar: Bool = true
-    @State var isFishing: Bool = false
-    @State var isFishDataPopsOut: Bool = false
     @State var isOneMinute: Bool = false
     
     var body: some View {
